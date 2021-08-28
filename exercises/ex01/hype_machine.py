@@ -1,4 +1,4 @@
-""" Utilizes the user's input to display hype messages."""
+"""Utilizes the user's input to display hype messages."""
 
 __author__ = "730489843"
 
