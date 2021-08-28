@@ -1,5 +1,9 @@
-# TODO: Write docstring here
+""" Utilizes the user's input to display hype messages"""
 
-# TODO: Initialize __author__ variable here
+__author__ = "730489843"
 
-# TODO: Implement your program logic here
+name: str = input("What is your name? ")
+
+print(name + " is a genius!")
+print("You got this, " + name + "!")
+print("Believe in yourself, " + name + ", and you can do it!")
