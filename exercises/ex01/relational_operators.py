@@ -1,4 +1,4 @@
-"""Uses the user's input to demonstrate how relational operators work"""
+"""Uses the user's input to demonstrate how relational operators work."""
 
 __author__ = "730489843"
 

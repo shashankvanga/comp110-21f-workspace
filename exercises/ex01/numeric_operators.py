@@ -1,4 +1,4 @@
-"""Uses the user's input to demostrate how numerical operators work"""
+"""Uses the user's input to demostrate how numerical operators work."""
 
 __author__ = "730489843"
 
@@ -23,4 +23,3 @@ print(lhs + " // " + rhs + " is " + converted_operator_three)
 operator_four = (converted_lhs % converted_rhs)
 converted_operator_four = str(operator_four)
 print(lhs + " % " + rhs + " is " + converted_operator_four)
-
