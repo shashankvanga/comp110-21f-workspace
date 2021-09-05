@@ -19,4 +19,3 @@ else:
     beat_string = beat_string + beat
 
     print(beat_string)
-
