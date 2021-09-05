@@ -19,7 +19,7 @@ rand_result_2 = "A loyal, hardworking and beautiful person will enter your life 
 rand_result_3 = "You will experience actual success soon."
 rand_result_4 = "You will stumble into the happiness of your life"
 
-number = randint(1,4)
+number = randint(1, 4)
 
 if number == 1:
     print(rand_result_1)

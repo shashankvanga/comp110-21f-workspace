@@ -7,10 +7,9 @@ beat: str = input("What beat do you want to repeat? ")
 repetition: int = int(input("How many times do you want to repeat your beat? "))
 counter: int = 0
 
-if counter <= 0: 
+if repetition <= 0: 
     print("No beat...")
 else:
-
     beat_string = ""
 
     while counter < repetition - 1:
