@@ -1,14 +1,19 @@
+"""Project 0: Creating my own adventure using the Monty Hall Problem."""
+
+__author__ = "730489843"
+
+
 from random import randint
 
-points : int
-player : str
-strategy_unlocks : int
-runs : int
-wins : int
+points: int
+player: str
+strategy_unlocks: int
+runs: int
+wins: int
 description: int
 
-HAPPY_FACE : str = "\U0001f600"
-SAD_FACE : str = "\U0001F641"
+HAPPY_FACE: str = "\U0001f600"
+SAD_FACE: str = "\U0001F641"
 
 
 def correct_door() -> int:
@@ -31,8 +36,8 @@ def incorrect_door(correct : int, choice : int) -> int:
         return 1 + 2 + 3 - correct - choice
 
 
-def rules(points: int):
-    """returns the rules and strategies which can be used to win the game"""
+def rules(points: int) -> int:
+    """Returns the rules and strategies which can be used to win the game."""
     global strategy_unlocks, description
     rules_1 = int(input(
 f'''
@@ -44,7 +49,7 @@ Enter 3 to exit and return to the game.
     if rules_1 == 1:
         print(
 '''
-The Monty Hall problem is a classic game theory problem, where the player has to choose to open one of three closed doors to win a prize
+The Monty Hall problem is a classic game theory problem, where the player has to choose to open one of three closed doors to win a prize.
 The host knows which door has the prize behind it, and will choose to open an incorrect door (it cannot be the one the player chose).
 The player will then be given the option to either stay with their choice or switch to the other closed door.
 Their final decision could be the only thing in their way of winning a grand prize!
@@ -69,11 +74,11 @@ Strategy - There is always a higher probabilty of the player winning if they cho
 
 
 
-def simulate():
-    """Simulates a run of Monty Hall"""
+def simulate() -> None:
+    """Simulates a run of Monty Hall."""
     global player, points, runs, wins
     runs += 1
-    choice = int(input(f"Okay, {player}! You have three doors: 1, 2 and 3. Choose your lucky door! "))
+    choice = int(input(f"Okay, {player}! You have three doors: 1, 2 and 3. Choose your lucky door!"))
     points += 1
     jackpot = correct_door()
 
@@ -106,16 +111,15 @@ def simulate():
         print(f"Oops! Tough luck! {SAD_FACE} The correct door was {jackpot}")
             
 
-def greet():
-    """greets the player as soon as the program is run"""
+def greet() -> None:
+    """Greets the player as soon as the program is run."""
     global player
     print("Welcome to the Monty Hall Problem!")
-    player = input("Enter your name to begin : ")
+    player = input("Enter your name to begin: ")
     return None
 
-
-def main():
-    """main function that runs the whole game"""
+def main() -> None:
+    """Main function that runs the whole game."""
     global points, runs, wins, strategy_unlocks, description
     greet()
     print(f"Welcome to the Monty Hall Problem {player}!")
@@ -123,7 +127,7 @@ def main():
     runs = 0
     wins = 0
     strategy_unlocks = 0
-    choice = -1 # Any value other than 3 is ok here
+    choice = -1     # Any value other than 3 is ok here
     description = 0
     while choice != 3:     
         print("-------------")
@@ -142,8 +146,6 @@ def main():
     print(f"You unlocked the strategy {strategy_unlocks} times")
     print(f"You read the description {description} times!")
     return None
-
-
 
 if __name__ == "__main__":
     main()
