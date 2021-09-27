@@ -17,13 +17,13 @@ SAD_FACE: str = "\U0001F641"
 
 
 def correct_door() -> int:
-    """returns the door number containing the prize"""
+    """Returns the door number containing the prize."""
     door_no = randint(1, 3)
     return door_no
 
 
-def incorrect_door(correct : int, choice : int) -> int:
-    """returns an incorrect door in 1st step of Monty Hall Problem"""
+def incorrect_door(correct: int, choice: int) -> int:
+    """Returns an incorrect door in 1st step of Monty Hall Problem."""
     if correct == choice:
         if correct == 1:
             return 2
@@ -40,21 +40,21 @@ def rules(points: int) -> int:
     """Returns the rules and strategies which can be used to win the game."""
     global strategy_unlocks, description
     rules_1 = int(input(
-f'''
+        f'''
 {player}, enter 1 to read the description of the game. You will earn one point if you enter 1!
 Enter 2 to read a few strategies to perform better at the game. However, BEWARE! YOU WILL LOSE 1 POINT!
 Enter 3 to exit and return to the game.
-'''
+                '''
     ))
     if rules_1 == 1:
         print(
-'''
+            '''
 The Monty Hall problem is a classic game theory problem, where the player has to choose to open one of three closed doors to win a prize.
 The host knows which door has the prize behind it, and will choose to open an incorrect door (it cannot be the one the player chose).
 The player will then be given the option to either stay with their choice or switch to the other closed door.
 Their final decision could be the only thing in their way of winning a grand prize!
 Start playing the game to earn one free point, but feel free to use the 'Strategy' option at the cost of one point!
-'''
+                '''
         )
         points += 1
         description += 1
@@ -62,16 +62,14 @@ Start playing the game to earn one free point, but feel free to use the 'Strateg
     else:
         if rules_1 == 2:
             print(
-'''
+                '''
 Strategy - There is always a higher probabilty of the player winning if they choose to switch their decision to the other unopened door (probability of winning is 2/3 when they switch, but remains 1/3 when they do not switch!)
-'''
+                '''
             )
             strategy_unlocks += 1
             points -= 1
             print(f"{player}, your total points are: {points}")
     return points
-
-
 
 
 def simulate() -> None:
@@ -87,17 +85,17 @@ def simulate() -> None:
     print(f"Let's open door {incorrect}. Oh, but this is pure garbage!")
     print("Now you have two doors. Would you like to stay with your original door or switch?")
     print("Enter 1 to stay")
-    print("Enter 2 to switch")
-    switch_response = int(input())
-    won : bool = False
+    switch_response = int(input("Enter any other number to switch!"))
+    won: bool = False
     if switch_response == 1:
         # chose to stay
         if choice == jackpot:
             won = True
         else:
             won = False
-    else:
+    
         # chose to switch
+    else:
         if choice == jackpot:
             won = False
         else:
@@ -118,9 +116,10 @@ def greet() -> None:
     player = input("Enter your name to begin: ")
     return None
 
+
 def main() -> None:
     """Main function that runs the whole game."""
-    global points, runs, wins, strategy_unlocks, description
+    global points, runs, wins, strategy_unlocks, description, player
     greet()
     print(f"Welcome to the Monty Hall Problem {player}!")
     points = 0
@@ -146,6 +145,7 @@ def main() -> None:
     print(f"You unlocked the strategy {strategy_unlocks} times")
     print(f"You read the description {description} times!")
     return None
+
 
 if __name__ == "__main__":
     main()
