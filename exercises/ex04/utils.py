@@ -6,6 +6,8 @@ __author__ = "730489843"
 def all(one: list[int], two: int) -> bool:
     """Checks if all the ints in a list match a given int."""
     i: int = 0
+    if len(one) == 0:
+        return False
     while i < len(one):
         check: int = one[i]
         if check != two:
@@ -13,7 +15,6 @@ def all(one: list[int], two: int) -> bool:
         i += 1
     
     return True
-
 
 
 def is_equal(one: list[int], two: list[int]) -> bool:
